@@ -7,14 +7,33 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
 
+    @IBOutlet var addBeacon: UIButton!
+    var locationHandler : LocationHandler = LocationHandler()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
+    
+    @IBAction func addBeaconAction(_ sender: Any) {
+        let controller = storyboard!.instantiateViewController(withIdentifier: "AddBeaconViewController") as? AddBeaconViewController
+        controller?.newCallback = { item in
+            self.locationHandler.startScanning(item: item)
+        }
+        self.present(controller!, animated: true, completion: nil)
+    }
 }
+extension ViewController: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("here notified VC")
+        completionHandler([.alert])
+    }
+}
+
+
+
 

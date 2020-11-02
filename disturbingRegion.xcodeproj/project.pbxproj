@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD38763D254FF158008D6C44 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD38763C254FF158008D6C44 /* Item.swift */; };
+		AD3876432550152E008D6C44 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3876422550152E008D6C44 /* LocalNotificationManager.swift */; };
 		ADCAAF9B254981290069753D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCAAF9A254981290069753D /* AppDelegate.swift */; };
 		ADCAAF9D254981290069753D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCAAF9C254981290069753D /* SceneDelegate.swift */; };
 		ADCAAF9F254981290069753D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCAAF9E254981290069753D /* ViewController.swift */; };
 		ADCAAFA2254981290069753D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADCAAFA0254981290069753D /* Main.storyboard */; };
 		ADCAAFA42549812B0069753D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADCAAFA32549812B0069753D /* Assets.xcassets */; };
 		ADCAAFA72549812B0069753D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADCAAFA52549812B0069753D /* LaunchScreen.storyboard */; };
+		ADCAAFAF254981730069753D /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCAAFAE254981730069753D /* LocationHandler.swift */; };
+		ADCAAFB1254983860069753D /* AddBeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCAAFB0254983860069753D /* AddBeaconViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD38763C254FF158008D6C44 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		AD3876422550152E008D6C44 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		ADCAAF97254981290069753D /* disturbingRegion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = disturbingRegion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADCAAF9A254981290069753D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADCAAF9C254981290069753D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +30,8 @@
 		ADCAAFA32549812B0069753D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADCAAFA62549812B0069753D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADCAAFA82549812B0069753D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADCAAFAE254981730069753D /* LocationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
+		ADCAAFB0254983860069753D /* AddBeaconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBeaconViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +65,12 @@
 			isa = PBXGroup;
 			children = (
 				ADCAAF9A254981290069753D /* AppDelegate.swift */,
+				AD3876422550152E008D6C44 /* LocalNotificationManager.swift */,
 				ADCAAF9C254981290069753D /* SceneDelegate.swift */,
+				ADCAAFAE254981730069753D /* LocationHandler.swift */,
 				ADCAAF9E254981290069753D /* ViewController.swift */,
+				ADCAAFB0254983860069753D /* AddBeaconViewController.swift */,
+				AD38763C254FF158008D6C44 /* Item.swift */,
 				ADCAAFA0254981290069753D /* Main.storyboard */,
 				ADCAAFA32549812B0069753D /* Assets.xcassets */,
 				ADCAAFA52549812B0069753D /* LaunchScreen.storyboard */,
@@ -138,9 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD3876432550152E008D6C44 /* LocalNotificationManager.swift in Sources */,
 				ADCAAF9F254981290069753D /* ViewController.swift in Sources */,
 				ADCAAF9B254981290069753D /* AppDelegate.swift in Sources */,
+				ADCAAFB1254983860069753D /* AddBeaconViewController.swift in Sources */,
 				ADCAAF9D254981290069753D /* SceneDelegate.swift in Sources */,
+				AD38763D254FF158008D6C44 /* Item.swift in Sources */,
+				ADCAAFAF254981730069753D /* LocationHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +301,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KC5H4C562K;
 				INFOPLIST_FILE = disturbingRegion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,6 +319,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KC5H4C562K;
 				INFOPLIST_FILE = disturbingRegion/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

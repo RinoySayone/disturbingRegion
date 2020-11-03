@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        print("launch with option")
         // Override point for customization after application launch.
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options:[.alert, .sound]) { (granted, error) in }
@@ -33,7 +34,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+        print("terminate")
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        print("become active")
+    }
 
-
+    func applicationWillResignActive(_ application: UIApplication) {
+        print("resign active")
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        print("enter forground")
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        print("enter foreground")
+    }
 }
 

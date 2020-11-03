@@ -37,6 +37,10 @@ class LocationHandler : NSObject{
         }
     }
     
+    func ss() {
+        notificationLocal.didinitiateNotification()
+    }
+    
     func startScanning(item: Item) {
         let beaconRegion = item.asBeaconRegion()
         beaconRegion.notifyOnExit = true
@@ -51,6 +55,7 @@ extension LocationHandler : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedAlways || status == .authorizedWhenInUse {
             locationManager.allowsBackgroundLocationUpdates = true
+            self.locationManager.startUpdatingLocation()
         } else if status == .denied || status == .restricted {
         }
     }
@@ -62,16 +67,20 @@ extension LocationHandler : CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("entered in region \(region.identifier)")
-        notificationLocal.didinitiateNotification()
-        timer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { timer in
-            print("timer fired")
+        self.notificationLocal.didinitiateNotification()
+        self.timer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { timer in
             self.notificationLocal.didinitiateNotification()
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("working")
     }
     
     func locationManager(_ manager: CLLocationManager, didRange beacons: [CLBeacon], satisfying beaconConstraint: CLBeaconIdentityConstraint) {
 //        notificationLocal.didinitiateNotification()
         //this only works in only app is in foreground not background
+        
     }
     
     func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {

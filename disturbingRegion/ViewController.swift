@@ -23,6 +23,11 @@ class ViewController: UIViewController {
         let controller = storyboard!.instantiateViewController(withIdentifier: "AddBeaconViewController") as? AddBeaconViewController
         controller?.newCallback = { item in
             self.locationHandler.startScanning(item: item)
+//                self.locationHandler.ss()
+//                let timer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { timer in
+//                    print("worked")
+//                    self.locationHandler.ss()
+//                }
             self.monitoringLabel.isHidden = false
         }
         self.present(controller!, animated: true, completion: nil)

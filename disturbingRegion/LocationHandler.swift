@@ -22,7 +22,6 @@ class LocationHandler : NSObject{
         self.requestLocationPermission()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//        locationManager.accuracyAuthorization = KCL
     }
     
     private func requestLocationPermission() {
@@ -31,6 +30,7 @@ class LocationHandler : NSObject{
         case .notDetermined:
             locationManager.requestAlwaysAuthorization()
         case .denied, .restricted, .authorizedWhenInUse:
+            locationManager.requestAlwaysAuthorization()
             break
         default:
             break
@@ -41,6 +41,7 @@ class LocationHandler : NSObject{
         let beaconRegion = item.asBeaconRegion()
         beaconRegion.notifyOnExit = true
         beaconRegion.notifyOnEntry = true
+        beaconRegion.notifyEntryStateOnDisplay = true
         locationManager.startMonitoring(for: beaconRegion)
         locationManager.startRangingBeacons(satisfying: beaconRegion.beaconIdentityConstraint)
     }

@@ -30,16 +30,25 @@
                                     <action selector="addBeaconAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IxC-ce-AX4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monitoring started..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0G-cB-Bq8">
+                                <rect key="frame" x="130" y="124" width="154.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Y6J-pk-FKi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="M9v-PA-jXB"/>
+                            <constraint firstItem="U0G-cB-Bq8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ubx-aE-LoQ"/>
+                            <constraint firstItem="U0G-cB-Bq8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="VA7-4x-RY2"/>
                             <constraint firstItem="Y6J-pk-FKi" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="daZ-v2-3oP"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addBeacon" destination="Y6J-pk-FKi" id="dkM-ls-QjS"/>
+                        <outlet property="monitoringLabel" destination="U0G-cB-Bq8" id="6G0-kr-6uj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -20,7 +20,7 @@ class AddBeaconViewController: UIViewController {
         minorTextfield.delegate = self
         majorTextField.delegate = self
         uuidTextfield.delegate = self
-        uuidTextfield.text = "f595c00a-21ec-4665-966e-74a22156ce50"
+        uuidTextfield.text = "e8491414-6eda-4e72-a03d-d5455f6f69d2"
         majorTextField.text = "12"
         minorTextfield.text = "13"
     }

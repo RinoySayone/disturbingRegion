@@ -26,13 +26,6 @@ class ViewController: UIViewController {
         self.present(controller!, animated: true, completion: nil)
     }
 }
-extension ViewController: UNUserNotificationCenterDelegate {
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        print("here notified VC")
-        completionHandler([.alert])
-    }
-}
 
 
 

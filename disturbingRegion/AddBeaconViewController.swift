@@ -47,10 +47,3 @@ extension AddBeaconViewController : UITextFieldDelegate {
     }
 }
 
-extension AddBeaconViewController: UNUserNotificationCenterDelegate {
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        print("here notified add beacon")
-        completionHandler([.alert])
-    }
-}

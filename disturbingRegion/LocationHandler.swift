@@ -12,6 +12,8 @@ import UserNotifications
 class LocationHandler : NSObject{
     private let locationManager = CLLocationManager()
     private let notificationLocal  = LocalNotificationManager()
+    private var timer = Timer()
+    
     override init() {
         super.init()
         self.initLocationManager()
@@ -20,6 +22,7 @@ class LocationHandler : NSObject{
         self.requestLocationPermission()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.a
     }
     
     private func requestLocationPermission() {
@@ -51,13 +54,16 @@ extension LocationHandler : CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
         print("exited from region \(region.identifier)")
-//        should stop the timer
+        timer.invalidate()
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
         print("entered in region \(region.identifier)")
-        //here we need to implement timer here
         notificationLocal.didinitiateNotification()
+        timer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: true) { timer in
+            print("timer fired")
+            self.notificationLocal.didinitiateNotification()
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didRange beacons: [CLBeacon], satisfying beaconConstraint: CLBeaconIdentityConstraint) {

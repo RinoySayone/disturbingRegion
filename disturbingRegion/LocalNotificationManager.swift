@@ -38,7 +38,6 @@ class LocalNotificationManager: NSObject {
         }
     }
     
-    
     private func requestAuthorization(completionHandler: @escaping (_ success: Bool) -> ()) {
         // Request Authorization
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (success, error) in
@@ -49,14 +48,13 @@ class LocalNotificationManager: NSObject {
         }
     }
     
-    
     private func scheduleLocalNotification() {
         print("here")
         let notificationContent = UNMutableNotificationContent()
         notificationContent.title = "Entered"
         notificationContent.subtitle = "Local Notifications"
         notificationContent.body = "you are in this region"
-        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval:  0.10, repeats: false)
+        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval:  0.1, repeats: false)
         let notificationRequest = UNNotificationRequest(identifier: "cocoacasts_local_notification", content: notificationContent, trigger: notificationTrigger)
         UNUserNotificationCenter.current().add(notificationRequest) { (error) in
             if let error = error {
